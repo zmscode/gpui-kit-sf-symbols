@@ -1,11 +1,31 @@
 # gpui-kit-sf-symbols
 
+[![CI](https://github.com/zmscode/gpui-kit-sf-symbols/actions/workflows/ci.yml/badge.svg)](https://github.com/zmscode/gpui-kit-sf-symbols/actions/workflows/ci.yml) [![Docs](https://img.shields.io/docsrs/gpui-kit-sf-symbols)](https://docs.rs/gpui-kit-sf-symbols/) [![Crates.io](https://img.shields.io/crates/v/gpui-kit-sf-symbols)](https://crates.io/crates/gpui-kit-sf-symbols) [![License](https://img.shields.io/crates/l/gpui-kit-sf-symbols)](#license)
+
 Apple [SF Symbols](https://developer.apple.com/sf-symbols/) for
 [GPUI Kit](https://gpui-kit.com) on macOS: any symbol the system has, in all
 nine weights, with hierarchical layers and variable values.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zmscode/gpui-kit-sf-symbols/main/docs/images/weights-dark.png">
+  <img alt="Ten SF Symbols in each of the nine weights" src="https://raw.githubusercontent.com/zmscode/gpui-kit-sf-symbols/main/docs/images/weights-light.png" width="620">
+</picture>
+
 `SfSymbol` implements GPUI Kit's `IconNamed` trait, so it works anywhere GPUI
-Kit takes an icon: `Icon::new(...)`, buttons, menus, and so on.
+Kit takes an icon: `Icon::new(...)`, buttons, inputs, tags, menus, and so on.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zmscode/gpui-kit-sf-symbols/main/docs/images/components-dark.png">
+  <img alt="GPUI Kit buttons, a search input and tags using SF Symbols" src="https://raw.githubusercontent.com/zmscode/gpui-kit-sf-symbols/main/docs/images/components-light.png" width="580">
+</picture>
+
+Symbols take the surrounding text color at any size, and hierarchical layers
+and variable values keep their look in every color:
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zmscode/gpui-kit-sf-symbols/main/docs/images/styling-dark.png">
+  <img alt="A globe at six sizes, hearts and hierarchical folder badges in six colors, and wifi at four variable values" src="https://raw.githubusercontent.com/zmscode/gpui-kit-sf-symbols/main/docs/images/styling-light.png" width="580">
+</picture>
 
 Nothing is bundled. Apple's license does not allow redistributing the symbol
 artwork, so symbols are rendered as vector SVG paths from the running system
@@ -113,6 +133,14 @@ crate's `gpui-fast` feature too.
 
 ```sh
 cargo run --example gallery
+```
+
+The images in this README are rendered by GPUI itself, offscreen, by
+[`examples/readme_images.rs`](examples/readme_images.rs). Regenerate them after
+changing the shim or the showcase:
+
+```sh
+cargo run --example readme_images
 ```
 
 ## Tests
